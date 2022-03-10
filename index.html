@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <title>learn5level2</title>
+</head>
+<body id="bod">
+    <header>
+        <h1> Занятие №5 Модуля №2 </h1>
+    </header>
+    <hr>
+    <hr>
+    <div>
+        <h2> Новый калькулятор </h2>
+        <hr>
+        <p> Введите число факториал которого необходимо подсчитать </p>
+        <p>
+            <input type="text" id="fact">
+            <button onclick="fact()">n!</button>
+            Результат = <span id="resFact"></span>
+        </p>
+        <hr>
+        <p> Подсчет остатка от деления </p>
+        <p>
+            <p><input type="text" id="devisibleMod"> Делимое </p>
+            <p><input type="text" id="deviderMod"> Делитель </p>
+            <p><button onclick="divByMod()">%</button></p>
+            Результат = <span id="resDivMode"></span>
+        </p>
+        <hr>
+        <hr>
+        <h2> Задача </h2>
+        <p>
+            <p> Древние египтяне тянут строительный блок на высоту 'N' метров,
+            за один день они поднимаю блок на высоту 'x' метров,
+            однако за ночь блок опускается под собственным весом на 1 метр.
+            Расчитайте количество дней, необходимое чтобы поднять блок на 'N' метров </p>
+            <p><input type="text" id="n_level"> Введите N </p>
+            <p><input type="text" id="x_for_day"> Введите x </p>
+            Ответ = <span id="resDayCount"></span>
+        </p>
+        <hr>
+        <hr>
+        <h2> Конвертация валюты </h2>
+        <p>
+            Что конвертируем
+            <select id="selectFirCurrency">
+                <option value=”euro”>EUR</option>
+                <option value=”dollar”>$</option>
+                <option value=”ruble”>Рубль</option>
+            </select>
+        </p>
+        Конвертируемая сумма
+        <input type="text" id="currCount">
+        <p>
+            Во что конвертируем
+            <select id="selectSecCurrency">
+                <option value=”euro”>EUR</option>
+                <option value=”dollar”>$</option>
+                <option value=”ruble”>Рубль</option>
+            </select>
+        </p>
+        <button onclick="convertation()">Конвертровать</button>
+        <p> Итоговая сумма = <span id="resCurr"></span> </p>
+    </div>
+</body>
+</html>
