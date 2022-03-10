@@ -4,6 +4,7 @@
     <link rel="stylesheet" href="style.css">
     <meta charset="UTF-8">
     <title>learn5level2</title>
+    <script src="script.js"></script>
 </head>
 <body id="bod">
     <header>
@@ -16,7 +17,7 @@
         <hr>
         <p> Введите число факториал которого необходимо подсчитать </p>
         <p>
-            <input type="text" id="fact">
+            <input type="text" id="factor">
             <button onclick="fact()">n!</button>
             Результат = <span id="resFact"></span>
         </p>
@@ -29,7 +30,6 @@
             Результат = <span id="resDivMode"></span>
         </p>
         <hr>
-        <hr>
         <h2> Задача </h2>
         <p>
             <p> Древние египтяне тянут строительный блок на высоту 'N' метров,
@@ -38,9 +38,9 @@
             Расчитайте количество дней, необходимое чтобы поднять блок на 'N' метров </p>
             <p><input type="text" id="n_level"> Введите N </p>
             <p><input type="text" id="x_for_day"> Введите x </p>
+            <p><button onclick="computedDay()">Подсчитать количество дней</button></p>
             Ответ = <span id="resDayCount"></span>
         </p>
-        <hr>
         <hr>
         <h2> Конвертация валюты </h2>
         <p>
