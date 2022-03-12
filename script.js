@@ -1,18 +1,19 @@
 /* ДОПИШИТЕ КОД ФУНКЦИЙ ЧТОБЫ ВСЕ РАБОТАЛО!*/
 
 /* Реализуйте функцию подсчета факториала числа n */
-function fact(){
+function fact() {
     let n = Number(factor.value);
-    let result;
-    /*
-    ВАШ КОД ТУТ
-    result =
-    */
+    let result=1;
+    for(let i = n; i>0; i--){        
+        result = result * i;
+    }
     resFact.innerHTML = result;
 }
 
+
+
 /* Реализуйте функцию деления по модулю X на Y */
-function divByMod(){
+function divByMod() {
     let X = Number(devisibleMod.value);
     let Y = Number(deviderMod.value);
     let result;
@@ -24,7 +25,7 @@ function divByMod(){
 }
 
 /* Реализуйте функцию подсчета дней */
-function computedDay(){
+function computedDay() {
     let N = Number(n_level.value);
     let x = Number(x_for_day.value);
     let result;
