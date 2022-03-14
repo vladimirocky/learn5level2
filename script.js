@@ -15,10 +15,9 @@ function divByMod() {
   let X = Number(devisibleMod.value);
   let Y = Number(deviderMod.value);
   let result;
-  /*
-  ВАШ КОД ТУТ
-  result =
-  */
+
+  result = X % Y;
+
   resDivMode.innerHTML = result;
 }
 
