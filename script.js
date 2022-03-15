@@ -1,68 +1,119 @@
 /* ДОПИШИТЕ КОД ФУНКЦИЙ ЧТОБЫ ВСЕ РАБОТАЛО!*/
 
 /* Реализуйте функцию подсчета факториала числа n */
-function fact(){
-    let n = Number(factor.value);
-    let result;
-    /*
-    ВАШ КОД ТУТ
-    result =
-    */
-    resFact.innerHTML = result;
+function fact() {
+  let n = Number(factor.value);
+  let result;
+
+  function factorial(x) {
+
+    if (x <= 0) return 1;
+
+    return x * factorial(x - 1);
+  }
+
+  result = factorial(n)
+
+  resFact.innerHTML = result;
 }
 
 /* Реализуйте функцию деления по модулю X на Y */
-function divByMod(){
-    let X = Number(devisibleMod.value);
-    let Y = Number(deviderMod.value);
-    let result;
-    /*
-    ВАШ КОД ТУТ
-    result =
-    */
-    resDivMode.innerHTML = result;
+function divByMod() {
+  let X = Number(devisibleMod.value);
+  let Y = Number(deviderMod.value);
+  let result;
+
+  result = X % Y;
+
+  resDivMode.innerHTML = result;
 }
 
 /* Реализуйте функцию подсчета дней */
-function computedDay(){
-    let N = Number(n_level.value);
-    let x = Number(x_for_day.value);
-    let result;
-    /*
-    ВАШ КОД ТУТ
-    while .../ for ...
-    выбирайте цикл
-    как посчитаете нужным
-    result =
-    */
-    resDayCount.innerHTML = result;
+function computedDay() {
+  let N = Number(n_level.value);
+  let x = Number(x_for_day.value);
+  let result;
+
+  function getPir(z, y) {
+
+    let counter = 1
+
+    if (x < 2) {
+      return "ошибка";
+
+    } else {
+
+    while (counter * x - (counter - 1) < N) {
+      counter++
+     }
+    return counter
+   } 
+  }
+
+  result = getPir(x, N)
+
+  resDayCount.innerHTML = result;
 }
 
 /* Реализуйте функцию подсчета конвертированной суммы*/
 function convertation() {
-    // Используйте коэффициэнты
-    const UER_TO_DOL = 0.9;
-    const EUR_TO_RUB = 0.007;
-    const DOL_TO_EUR = 1.05;
-    const DOL_TO_RUB = 0.008;
-    const RUB_TO_DOL = 116;
-    const RUB_TO_EUR = 126;
+  // Используйте коэффициэнты
+  const EUR_TO_DOL = 0.9;
+  const EUR_TO_RUB = 0.007;
 
-    // В следующих переменных записываем что выбрал/ввел пользователь
-    // конвертируемая сумма
-    let summ = Number(currCount.value)
-    // из какой валюты
-    let fir_curr = selectFirCurrency.value;
-    // в какую валюту
-    let sec_curr = selectSecCurrency.value;
+  const DOL_TO_EUR = 1.05;
+  const DOL_TO_RUB = 0.008;
 
-    let result;
-    /*
-    ВАШ КОД ТУТ
-    switch ()
-        case
-    result =
-    */
+  const RUB_TO_DOL = 116;
+  const RUB_TO_EUR = 126;
 
-    resCurr.innerHTML = result;
+  // В следующих переменных записываем что выбрал/ввел пользователь
+
+  // конвертируемая сумма
+  let summ = Number(currCount.value)
+
+  // из какой валюты
+  let fir_curr = String(selectFirCurrency.value);
+
+  // в какую валюту
+  let sec_curr = selectSecCurrency.value;
+
+  let result;
+
+  const select = document.querySelector('#selectFirCurrency')
+
+  const select2 = document.querySelector('#selectSecCurrency')
+
+
+  let curs = fir_curr + sec_curr;
+
+
+  switch (curs) {
+
+    case select.options[0].value + select2.options[1].value:
+      result = (summ / EUR_TO_DOL);
+      break;
+
+    case select.options[0].value + select2.options[2].value:
+      result = (summ / EUR_TO_RUB);
+      break;
+
+    case select.options[1].value + select2.options[0].value:
+      result = (summ / DOL_TO_EUR)
+      break;
+
+    case select.options[1].value + select2.options[2].value:
+      result = (summ / DOL_TO_RUB)
+      break;
+
+    case select.options[2].value + select2.options[0].value:
+      result = (summ / RUB_TO_EUR)
+      break;
+
+      case select.options[2].value + select2.options[1].value:
+        result = (summ / RUB_TO_DOL )
+      break;
+  }
+
+  resCurr.innerHTML = result;
 }
