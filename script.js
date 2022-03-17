@@ -43,8 +43,13 @@ function computedDay() {
       "Нужно ускориться. Такими темпами пирамиды нам не видать :(";
   } else {
     while (i < N) {
-      i = i + x - 1;
+      i = i + x;
       result++;
+      if(i===N){
+        break;
+      }else{
+      i-=1;
+    }
     }
     resDayCount.innerHTML = result;
   }
@@ -93,6 +98,8 @@ function convertation() {
     case "”ruble””euro”":
       result = (summ / RUB_TO_EUR).toFixed(2);
       break;
+      default:
+        result=summ;
   }
 
   resCurr.innerHTML = result;
