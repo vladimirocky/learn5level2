@@ -34,6 +34,13 @@ function computedDay() {
   let x = Number(x_for_day.value);
   let result;
 
+  /**
+   * Зачем эта функция?
+   * Если у нас есть параметры z и y
+   * то где ы теле функции мы их испольуем?
+   * Предлагаю созвониться и разобраться с реалзацией
+   * не понимаю в чем тут логика
+   */
   function getPir(z, y) {
 
     let counter = 1
@@ -110,9 +117,18 @@ function convertation() {
       result = (summ / RUB_TO_EUR)
       break;
 
-      case select.options[2].value + select2.options[1].value:
-        result = (summ / RUB_TO_DOL )
+    case select.options[2].value + select2.options[1].value:
+      result = (summ / RUB_TO_DOL )
       break;
+      /**
+       * default
+       * для остальных случаев
+       * осталсь случаи когда выбрано
+       * рубль - рубль
+       * евро-евро
+       * и тп
+       */
+
   }
 
   resCurr.innerHTML = result;
