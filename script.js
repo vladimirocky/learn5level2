@@ -30,27 +30,20 @@ function divByMod() {
 
 /* Реализуйте функцию подсчета дней */
 function computedDay() {
-  let N = Number(n_level.value);
-  let x = Number(x_for_day.value);
-  let result;
+  let N = Number(n_level.value); 
+  let x = Number(x_for_day.value); 
+  let result; 
+  let counter = 1 
 
-  function getPir(z, y) {
+  if (x < 2) {
 
-    let counter = 1
-
-    if (x < 2) {
-      return "ошибка";
-
-    } else {
-
+    result = "ошибка";
+  } else {
     while (counter * x - (counter - 1) < N) {
       counter++
-     }
-    return counter
-   } 
+    }
+    result = counter
   }
-
-  result = getPir(x, N)
 
   resDayCount.innerHTML = result;
 }
@@ -110,8 +103,8 @@ function convertation() {
       result = (summ / RUB_TO_EUR)
       break;
 
-      case select.options[2].value + select2.options[1].value:
-        result = (summ / RUB_TO_DOL )
+    case select.options[2].value + select2.options[1].value:
+      result = (summ / RUB_TO_DOL)
       break;
   }
 
