@@ -106,6 +106,18 @@ function convertation() {
     case select.options[2].value + select2.options[1].value:
       result = (summ / RUB_TO_DOL)
       break;
+
+      case select.options[0].value + select2.options[0].value:
+        result = (summ / 1)
+      break;
+
+      case select.options[1].value + select2.options[1].value:
+        result = (summ / 1)
+      break;
+
+      case select.options[2].value + select2.options[2].value:
+        result = (summ / 1)
+      break;
   }
 
   resCurr.innerHTML = result;
