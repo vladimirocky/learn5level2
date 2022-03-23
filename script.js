@@ -25,6 +25,12 @@ function computedDay(){
     //let result = N / (x-1) +1 (^2);
     let result ;
     for (let i = 0; i<=N; i+=x) {
+        /**
+         * Советую посмотреть разбор
+         * Дело в том что проверять,
+         * подняли мы блок или нет нужно прежде чем он опстится ночью
+         * @type {number}
+         */
         i-=y
         result =i;
     }
@@ -44,31 +50,38 @@ function convertation() {
     const RUB_TO_EUR = 126;
 
     let summ = Number(currCount.value)
-    let fir_curr = String(selectFirCurrency.value);
+    let fir_curr = selectFirCurrency.value;
     let sec_curr = selectSecCurrency.value;
     let result;
-    let curs = fir_curr + sec_curr;
+    let curs = fir_curr.concat(sec_curr);
+
     switch (curs) {
-        case 'eurdollar':
+        case '”euro””dollar”':
             result = (summ / EUR_TO_DOL);
             break;
-        case 'eurrubl':
+        case '”euro””ruble”':
             result = (summ / EUR_TO_RUB);
             break;
-        case 'dollareur':
+        case '”dollar””euro”':
             result = (summ / DOL_TO_EUR);
             break;
-        case 'dollarrubl':
+        case '”dollar””ruble”':
             result = (summ / DOL_TO_RUB);
             break;
-        case 'rubleur':
+        case '”ruble””euro”':
             result = (summ / RUB_TO_EUR);
             break;
-        case 'rubldollar':
+        case '”ruble””dollar”':
             result = (summ / RUB_TO_DOL);
             break;
         default:
-        result = 'Всё поломалось(';
+            result = 'Всё поломалось(';
+        /**
+         * На самом деле тут можно оставить
+         * подсказку что из евро в евро коэф 1
+         * из рубля в рубль коэф 1 и с долларами также
+         */
     }
     resCurr.innerHTML = result;
 }
+
