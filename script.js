@@ -27,10 +27,17 @@ function computedDay(){
     let N = Number(n_level.value);
     let x = Number(x_for_day.value);
     let result = 0;
-    
-    for(i=0;i<N;i=i+(x-1)){
-        console.log(i);
-        result++;
+    let level = 0;
+
+    //Только глянул разбор и услышал про бесконечный цикл, сразу понял что можно сделать
+    while(true){
+        level += x;
+        if(level >= N){
+            break;
+        }else{
+            result++;
+            level -= 1;
+        }
     }
     /**
      * Например,
@@ -80,9 +87,6 @@ function convertation() {
     console.log(currency);
 
     switch(currency){
-        case 'euro-euro': 
-            result = summ;
-            break;
         case 'dollar-dollar': 
             result = summ;
             break;
@@ -107,7 +111,9 @@ function convertation() {
         case 'ruble-euro': 
             result = summ*EUR_TO_RUB;
             break;
-
+        default: 
+            result = 'Выберите другую валюту';
+            break;
         /**
          * default для остальных случаев
          * например евро - евро -- ответ "выберите другую валюту"
