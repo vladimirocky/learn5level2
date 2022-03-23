@@ -26,6 +26,7 @@ function divByMod(){
 function computedDay(){
     let N = Number(n_level.value);
     let x = Number(x_for_day.value);
+    // на самом деле result = 1
     let result = 0;
     let level = 0;
 
