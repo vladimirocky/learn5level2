@@ -22,18 +22,19 @@ function computedDay(){
     let N = Number(n_level.value);
     let x = Number(x_for_day.value);
     let y = 1;
-    //let result = N / (x-1) +1 (^2);
-    let result ;
-    for (let i = 0; i<=N; i+=x) {
-        /**
-         * Советую посмотреть разбор
-         * Дело в том что проверять,
-         * подняли мы блок или нет нужно прежде чем он опстится ночью
-         * @type {number}
-         */
-        i-=y
-        result =i;
+
+    let result = 0 ;
+    let level = 0;
+
+    while (x>y) {
+        result++;
+        level += x;
+        if (level >= N) break ;
+        level-=y
+
     }
+
+    if (result < 1) result = "Попробуйте использовать другие входные данные, пожалуйста. "
     resDayCount.innerHTML = result;
 }
 
@@ -48,6 +49,10 @@ function convertation() {
 
     const RUB_TO_DOL = 116;
     const RUB_TO_EUR = 126;
+
+    const RUB_TO_RUB = 1;
+    const DOL_TO_DOL = 1;
+    const EUR_TO_EUR = 1;
 
     let summ = Number(currCount.value)
     let fir_curr = selectFirCurrency.value;
@@ -73,6 +78,15 @@ function convertation() {
             break;
         case '”ruble””dollar”':
             result = (summ / RUB_TO_DOL);
+            break;
+        case '”ruble””ruble”':
+            result = (summ / RUB_TO_RUB);
+            break;
+        case '”dollar””dollar”':
+            result = (summ / DOL_TO_DOL);
+            break;
+        case '”euro””euro”':
+            result = (summ / EUR_TO_EUR);
             break;
         default:
             result = 'Всё поломалось(';
