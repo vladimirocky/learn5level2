@@ -4,6 +4,9 @@
 function fact(){
     let n = Number(factor.value);
     let result = 1;
+    /**
+     * советую тут обработать случай если у нас n <= 0
+     */
 
     for (let i = 1; i <= n; i++) {
         result *= i;
@@ -24,7 +27,11 @@ function computedDay(){
     let N = Number(n_level.value);
     let x = Number(x_for_day.value);
     let result=0;
-   
+    /**
+     * Вот тут не учитывается, что мы можем днем достигнуть N
+     * тогда надо остановить подсчет дней и ночью на 1 не спускаться
+     * На платформе есть разбор этих задачек
+     */
     while (N > 0) {
         N=(N - x) +1;
         result++;
@@ -74,12 +81,24 @@ function convertation() {
             break;
         case '”ruble””ruble”':
             result = (summ / RUB_TO_RUB);
+            /**
+             * такой константы нет
+             * я бы этот кейс просто убрал и оставил бы на откуп default
+             */
             break;
         case '”dollar””dollar”':
             result = (summ / DOL_TO_DOL);
+            /**
+             * такой константы нет
+             * я бы этот кейс просто убрал и оставил бы на откуп default
+             */
             break;
         case '”euro””euro”':
             result = (summ / EUR_TO_EUR);
+            /**
+             * такой константы нет
+             * я бы этот кейс просто убрал и оставил бы на откуп default
+             */
             break;
         default:
             //через "use strict" es6 не подключается((((
