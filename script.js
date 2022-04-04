@@ -25,7 +25,7 @@ function divByMod(){
     let Y = Number(deviderMod.value);
     let result;
     
-    result = X%Y;
+    result = X % Y;
     
     resDivMode.innerHTML = result;
 }
