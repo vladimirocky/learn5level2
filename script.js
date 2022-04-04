@@ -1,13 +1,21 @@
 /* ДОПИШИТЕ КОД ФУНКЦИЙ ЧТОБЫ ВСЕ РАБОТАЛО!*/
 
 /* Реализуйте функцию подсчета факториала числа n */
-function fact(){
+function fact() {
     let n = Number(factor.value);
     let result;
-    /*
-    ВАШ КОД ТУТ
-    result =
-    */
+    
+    function factorial(n) {
+        if (n != 1) {
+            n = n * factorial(n-1);
+        } else {
+            n = 1;
+        }
+    return n;
+    }
+    
+    result = factorial(n);
+
     resFact.innerHTML = result;
 }
 
@@ -16,10 +24,9 @@ function divByMod(){
     let X = Number(devisibleMod.value);
     let Y = Number(deviderMod.value);
     let result;
-    /*
-    ВАШ КОД ТУТ
-    result =
-    */
+    
+    result = X%Y;
+    
     resDivMode.innerHTML = result;
 }
 
