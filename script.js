@@ -34,14 +34,14 @@ function divByMod(){
 function computedDay(){
     let N = Number(n_level.value);
     let x = Number(x_for_day.value);
-    let result;
-    /*
-    ВАШ КОД ТУТ
-    while .../ for ...
-    выбирайте цикл
-    как посчитаете нужным
-    result =
-    */
+    let result = 0;
+    var iterator = x;
+
+    for (x; x < N; x += iterator) {
+        x--;
+        result++;
+    }
+
     resDayCount.innerHTML = result;
 }
 
