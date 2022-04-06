@@ -1,13 +1,21 @@
 /* ДОПИШИТЕ КОД ФУНКЦИЙ ЧТОБЫ ВСЕ РАБОТАЛО!*/
 
 /* Реализуйте функцию подсчета факториала числа n */
-function fact(){
+function fact() {
     let n = Number(factor.value);
     let result;
-    /*
-    ВАШ КОД ТУТ
-    result =
-    */
+    
+    function factorial(n) {
+        if (n != 1) {
+            n = n * factorial(n-1);
+        } else {
+            n = 1;
+        }
+    return n;
+    }
+    
+    result = factorial(n);
+
     resFact.innerHTML = result;
 }
 
@@ -16,10 +24,9 @@ function divByMod(){
     let X = Number(devisibleMod.value);
     let Y = Number(deviderMod.value);
     let result;
-    /*
-    ВАШ КОД ТУТ
-    result =
-    */
+    
+    result = X % Y;
+    
     resDivMode.innerHTML = result;
 }
 
@@ -27,14 +34,14 @@ function divByMod(){
 function computedDay(){
     let N = Number(n_level.value);
     let x = Number(x_for_day.value);
-    let result;
-    /*
-    ВАШ КОД ТУТ
-    while .../ for ...
-    выбирайте цикл
-    как посчитаете нужным
-    result =
-    */
+    let result = 0;
+    var iterator = x;
+
+    for (x; x <= N; x += iterator) {
+        x--;
+        result++;
+    }
+
     resDayCount.innerHTML = result;
 }
 
@@ -50,19 +57,39 @@ function convertation() {
 
     // В следующих переменных записываем что выбрал/ввел пользователь
     // конвертируемая сумма
-    let summ = Number(currCount.value)
+    let summ = Number(currCount.value);
     // из какой валюты
     let fir_curr = selectFirCurrency.value;
     // в какую валюту
     let sec_curr = selectSecCurrency.value;
 
     let result;
-    /*
-    ВАШ КОД ТУТ
-    switch ()
-        case
-    result =
-    */
+    
+    let curs = fir_curr.concat(sec_curr);
+
+    switch (curs) {
+        case '”euro””dollar”':
+            result = (summ / EUR_TO_DOL);
+            break;
+        case '”euro””ruble”':
+            result = (summ / EUR_TO_RUB);
+            break;
+        case '”dollar””euro”':
+            result = (summ / DOL_TO_EUR);
+            break;
+        case '”dollar””ruble”':
+            result = (summ / DOL_TO_RUB);
+            break;
+        case '”ruble””euro”':
+            result = (summ / RUB_TO_EUR);
+            break;
+        case '”ruble””dollar”':
+            result = (summ / RUB_TO_DOL);
+            break;
+        default:
+            result = 'Всё поломалось(';
+    }
 
     resCurr.innerHTML = result;
 }
+
