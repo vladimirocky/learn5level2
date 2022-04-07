@@ -35,20 +35,26 @@ function computedDay(){
     let N = Number(n_level.value);
     let x = Number(x_for_day.value);
     let result = 0;
-    var iterator = x;
 
-    for (x; x <= N; x += iterator) {
-        x--;
-        result++;
+    let counter = 1 
+
+    if (x < 2) {
+        
+    result = "ошибка";
+
+    } else {
+    while (counter * x - (counter - 1) < N) {
+      counter++
     }
-
+    result = counter
+  }
     resDayCount.innerHTML = result;
 }
 
 /* Реализуйте функцию подсчета конвертированной суммы*/
 function convertation() {
     // Используйте коэффициэнты
-    const UER_TO_DOL = 0.9;
+    const EUR_TO_DOL = 0.9;
     const EUR_TO_RUB = 0.007;
     const DOL_TO_EUR = 1.05;
     const DOL_TO_RUB = 0.008;
