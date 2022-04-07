@@ -36,6 +36,15 @@ function computedDay(){
     let x = Number(x_for_day.value);
     let result = 0;
     var iterator = x;
+    /**
+     * Например, если N = 6 а x = 3
+     * 1. день +3 - высота 3, ночь -1, выосота 2
+     * 2. день +3 - высота 5, ночь -1, высота 4
+     * 3. день +3 - высота 7 - успех!
+     *
+     * Значит ответ должен быть 3
+     * данный алгоритм выдает 2
+     */
 
     for (x; x <= N; x += iterator) {
         x--;
@@ -48,7 +57,7 @@ function computedDay(){
 /* Реализуйте функцию подсчета конвертированной суммы*/
 function convertation() {
     // Используйте коэффициэнты
-    const UER_TO_DOL = 0.9;
+    const EUR_TO_DOL = 0.9;
     const EUR_TO_RUB = 0.007;
     const DOL_TO_EUR = 1.05;
     const DOL_TO_RUB = 0.008;
