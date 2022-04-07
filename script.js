@@ -35,13 +35,18 @@ function computedDay(){
     let N = Number(n_level.value);
     let x = Number(x_for_day.value);
     let result = 0;
-    var iterator = x;
+    let counter = 1 
 
-    for (x; x <= N; x += iterator) {
-        x--;
-        result++;
+    if (x < 2) {
+        
+    result = "ошибка";
+
+    } else {
+    while (counter * x - (counter - 1) < N) {
+      counter++
     }
-
+    result = counter
+  }
     resDayCount.innerHTML = result;
 }
 
