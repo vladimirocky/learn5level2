@@ -82,7 +82,6 @@ function convertation() {
                     break;
                 default: result = sum;
             }
-            break;
     }
     
 
