@@ -25,10 +25,21 @@ function computedDay(){
     let N = Number(n_level.value);
     let x = Number(x_for_day.value);
     let result;
-    if (x <= 1) result = 'Не поднимут';
-    else result = Math.ceil(N/(x-1));
+    if (x <= 1 && N > 1) result = 'Не поднимут';
+    else if (x >= N) result = 1;
+    else {
+        result = 0;
+        let i = 0;
+        for (i = 0; i < N;) {
+            i+=x;
+            if (i < N)
+            i--;
+            result++;
+        }
+    }
     resDayCount.innerHTML = result;
 }
+
 
 /* Реализуйте функцию подсчета конвертированной суммы*/
 function convertation() {
