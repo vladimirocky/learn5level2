@@ -3,11 +3,12 @@
 /* Реализуйте функцию подсчета факториала числа n */
 function fact(){
     let n = Number(factor.value);
-    let result;
-    /*
-    ВАШ КОД ТУТ
-    result =
-    */
+    let result = 1;
+    for(let i = n; i > 0; i--) {
+        result = result * i
+    }
+    
+    
     resFact.innerHTML = result;
 }
 
@@ -16,10 +17,9 @@ function divByMod(){
     let X = Number(devisibleMod.value);
     let Y = Number(deviderMod.value);
     let result;
-    /*
-    ВАШ КОД ТУТ
-    result =
-    */
+  
+    result = X % Y;
+    
     resDivMode.innerHTML = result;
 }
 
@@ -27,14 +27,19 @@ function divByMod(){
 function computedDay(){
     let N = Number(n_level.value);
     let x = Number(x_for_day.value);
-    let result;
-    /*
-    ВАШ КОД ТУТ
-    while .../ for ...
-    выбирайте цикл
-    как посчитаете нужным
-    result =
-    */
+    let result = 0;
+    let k = 0;
+    // for(i = 1; i < N; i++) {
+    //     result += x - 1;
+    //     console.log(result);
+    // }
+    while(x >1) {
+        result ++;
+        k +=x;
+        if(k >= N) break;
+        k --;
+    }
+    
     resDayCount.innerHTML = result;
 }
 
@@ -55,14 +60,32 @@ function convertation() {
     let fir_curr = selectFirCurrency.value;
     // в какую валюту
     let sec_curr = selectSecCurrency.value;
-
+        console.log(fir_curr,sec_curr);
     let result;
-    /*
-    ВАШ КОД ТУТ
-    switch ()
-        case
-    result =
-    */
-
+  
+      let exchange = fir_curr + sec_curr;
+      console.log(exchange);
+      switch (exchange) {
+          case"eurodollar" : 
+          result = (summ / UER_TO_DOL);
+          break;
+          case"euroruble" : 
+          result = (summ / EUR_TO_RUB);
+          break;
+          case"dollareuro" : 
+          result = (summ / DOL_TO_EUR);
+          break;
+          case"dollarruble" : 
+          result = (summ / DOL_TO_RUB);
+          break;
+          case"rubledollar" : 
+          result = (summ / RUB_TO_DOL);
+          break;
+          case"rubleeuro" : 
+          result = (summ / RUB_TO_EUR);
+          break;
+          default : 
+          result = "Выберите валюту"
+      }
     resCurr.innerHTML = result;
 }
